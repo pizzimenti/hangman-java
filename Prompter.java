@@ -3,11 +3,11 @@ import java.util.Scanner;
 class Prompter {
     private Game game;
 
-    public Prompter(Game game){
+    public Prompter(Game game) {
         this.game = game;
     }
 
-    public boolean promptForGuess(){
+    public boolean promptForGuess() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a letter:  ");
         String guessInput = scanner.nextLine();
@@ -16,7 +16,7 @@ class Prompter {
     }
 
     public void displayProgress() {
-        System.out.printf("Try to solve: %s%n",
-                            game.getCurrentProgress());
+        System.out.printf("You have %d tries left to solve: %s%n", 
+        game.getRemainingTries(), game.getCurrentProgress());
     }
 }
